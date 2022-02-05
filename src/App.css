@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  display: grid;
+  place-items: center;
+  background-color: #dadbd3;
   min-height: 100vh;
+}
+.appBody {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 3vmax 0;
+  width: 45%;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #ededed;
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.215);
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.todoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  margin: 1.5vmax 2vmax;
+  padding: 1vmax; 
+  cursor: pointer;
+}
+.todoContainer > .removeTodoBtn {
+  visibility: hidden;
+  cursor: pointer;
+  color: tomato;
+  transition: all 0.2s;
+}
+.todoContainer:hover > .removeTodoBtn {
+  visibility: visible;
+  transform: rotate(90deg);
+}
+.withoutLineThroughText {
+  font-size: 1.2vmax;
+}
+.lineThroughText {
+  text-decoration: line-through;
+}
+input[type="checkbox"] {
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+}
+.todoList {
+  width: 80%;
+}
+.todoItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.215);
+  margin: 2vmax 1vmax;
+}
+.todoItem:hover {
+  box-shadow: 1px 4px 20px -6px rgba(0, 0, 0, 0.215);
+}
+.todoItem:hover .deleteTodoBtn {
+  visibility: visible;
+}
+.showAllTodosBtn {
+  border: none;
+  font-size: 2rem;
+}
+.showAllTodosBtn:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.215);
+}
+.inputContainer {
+  border: none;
+  font-size: 1rem;
+  padding: 1vmax 2vmax;
+  border-radius: 2px;
+}
+.deleteTodoBtn {
+  font-size: 2rem;
+  color: tomato;
+  border: none;
+  transition: all 0.2s;
+  visibility: hidden;
+}
+.deleteTodoBtn:hover {
+  transform: rotate(90deg);
+}
+.done {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.315);
+}
+.footerBtn {
+  margin: 0 .1vmax;
+  border: none;
+  transition: all 0.5s;
+}
+.footerBtn:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.215);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todoText {
+  font-size: 1rem;
 }
